@@ -1,0 +1,204 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# JavaScript and TypeScript files
+*.js text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+
+# JSON files
+*.json text eol=lf
+*.jsonc text eol=lf
+
+# Configuration files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
+
+# Documentation files
+*.md text eol=lf
+*.mdx text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+*.adoc text eol=lf
+
+# Web files
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+*.less text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+*.fish text eol=lf
+
+# Docker files
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+
+# CI/CD files
+*.github text eol=lf
+*.gitlab-ci.yml text eol=lf
+.github/workflows/** text eol=lf
+
+# Package files
+package.json text eol=lf
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+pnpm-lock.yaml text eol=lf
+
+# Environment files (should not be merged)
+.env* text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Binary files (do not merge)
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.webp binary
+*.svg binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.xz binary
+*.7z binary
+*.rar binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.deb binary
+*.rpm binary
+*.dmg binary
+*.iso binary
+*.img binary
+
+# Database files
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+
+# SSL certificates
+*.pem binary
+*.crt binary
+*.cer binary
+*.key binary
+*.p12 binary
+*.pfx binary
+
+# Log files
+*.log text eol=lf
+
+# Node.js specific
+*.lock binary
+
+# Build outputs
+dist/ -export-ignore
+build/ -export-ignore
+coverage/ -export-ignore
+.nyc_output/ -export-ignore
+
+# Dependencies
+node_modules/ -export-ignore
+
+# OS generated files
+.DS_Store -export-ignore
+Thumbs.db -export-ignore
+
+# IDE files
+.vscode/ -export-ignore
+.idea/ -export-ignore
+
+# Temporary files
+tmp/ -export-ignore
+temp/ -export-ignore
+
+# Logs
+logs/ -export-ignore
+
+# Uploads
+uploads/ -export-ignore
+
+# SSL certificates (if self-signed)
+ssl/ -export-ignore
+
+# Docker volumes
+mongodb_data/ -export-ignore
+
+# PM2 files
+.pm2/ -export-ignore
+
+# Cache directories
+.cache/ -export-ignore
+.parcel-cache/ -export-ignore
+.next/ -export-ignore
+.nuxt/ -export-ignore
+
+# Test results
+test-results/ -export-ignore
+playwright-report/ -export-ignore
+coverage/ -export-ignore
+
+# Profiling files
+*.cpuprofile binary
+*.heapprofile binary
+
+# Specific merge strategies
+package.json merge=keepMine
+package-lock.json merge=keepMine
+yarn.lock merge=keepMine
+pnpm-lock.yaml merge=keepMine
+
+# Encoding settings
+*.js charset=utf-8
+*.ts charset=utf-8
+*.jsx charset=utf-8
+*.tsx charset=utf-8
+*.json charset=utf-8
+*.md charset=utf-8
+*.html charset=utf-8
+*.css charset=utf-8
+*.yml charset=utf-8
+*.yaml charset=utf-8
+
+# Diff settings
+*.jpg -diff
+*.jpeg -diff
+*.png -diff
+*.gif -diff
+*.bmp -diff
+*.ico -diff
+*.webp -diff
+*.pdf -diff
+*.zip -diff
+*.tar -diff
+*.gz -diff
+*.bz2 -diff
+*.xz -diff
+*.7z -diff
+*.rar -diff
+
+# Export ignore for archives
+.gitignore export-ignore
+.gitattributes export-ignore
+README.md !export-ignore
+LICENSE !export-ignore

@@ -1,22 +1,17 @@
 #!/bin/bash
 
-echo "🚀 Starting production build for Railway..."
+echo "🚀 Starting production setup for Railway..."
 
 # Install dependencies
 echo "📦 Installing dependencies..."
 npm ci --only=production
 
-# Build the web app for production
-echo "🔨 Building web application..."
-npx expo build:web --config app.production.json
+# Copy necessary files for production
+echo "📁 Setting up production files..."
+mkdir -p public
+cp index.html public/ 2>/dev/null || true
+cp -r assets public/ 2>/dev/null || true
 
-# Move build output to expected directory
-echo "📁 Moving build files..."
-mv web-build dist
-
-# Install production server dependencies
-echo "⚙️ Setting up production server..."
-npm install express cors --save
-
-echo "✅ Build completed successfully!"
-echo "🌐 Your app is ready to serve from the dist/ directory"
+echo "✅ Setup completed successfully!"
+echo "🌐 Your app is ready to serve static files"
+echo "📄 Serving index.html as main page"

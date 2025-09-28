@@ -1,7 +1,7 @@
 // Environment-specific configurations
 export const ENVIRONMENTS = {
   development: {
-    apiUrl: 'http://localhost:5000/api/v1',
+    apiUrl: 'http://192.168.56.1:5000/api/v1',
     enableLogging: true,
     enableErrorReporting: false,
     timeout: 15000,

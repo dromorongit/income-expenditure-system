@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start",
+    "start": "node server-production.js",
+    "dev": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "expo build:web",
+    "build:production": "expo build:web --config app.production.json",
+    "export": "expo export:web",
+    "serve": "npx serve@latest web-build",
+    "deploy": "npm run build && npm run serve",
+    "build:railway": "expo build:web --config app.production.json && mv web-build dist",
+    "start:production": "node server-production.js"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
@@ -15,13 +23,16 @@
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/stack": "^6.3.20",
+    "cors": "^2.8.5",
     "date-fns": "^3.0.6",
     "expo": "^53.0.20",
+    "expo-build-properties": "^1.0.9",
     "expo-document-picker": "~12.0.2",
     "expo-file-system": "~17.0.1",
     "expo-image-picker": "~15.0.7",
     "expo-sharing": "~12.0.1",
     "expo-status-bar": "~2.2.3",
+    "express": "^5.1.0",
     "mongodb": "^6.19.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -36,7 +47,8 @@
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "serve": "^14.2.5"
   },
   "private": true
 }

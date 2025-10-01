@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "npm run build:vercel",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "dist/**",
@@ -13,7 +16,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "dist/$1"
+      "dest": "/dist/$1"
     }
   ],
   "headers": [
@@ -27,8 +30,13 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
-  ]
+  ],
+  "outputDirectory": "dist"
 }

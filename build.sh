@@ -6,11 +6,13 @@ echo "🚀 Starting production setup for Railway..."
 echo "📦 Installing dependencies..."
 npm ci --only=production
 
-# Copy necessary files for production
-echo "📁 Setting up production files..."
-mkdir -p public
-cp index.html public/ 2>/dev/null || true
-cp -r assets public/ 2>/dev/null || true
+# Build the web app for production
+echo "🔨 Building web application..."
+npx expo export --platform web --config app.production.json
+
+# Ensure dist directory exists
+echo "📁 Ensuring build directory..."
+mkdir -p dist
 
 echo "✅ Setup completed successfully!"
 echo "🌐 Your app is ready to serve static files"

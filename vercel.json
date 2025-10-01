@@ -3,20 +3,14 @@
   "buildCommand": "npm run build:vercel",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "builds": [
+  "rewrites": [
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://income-expenditure-system-production.up.railway.app/api/$1"
+      "source": "/api/(.*)",
+      "destination": "https://income-expenditure-system-production.up.railway.app/api/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
+      "source": "/(.*)",
+      "destination": "/dist/$1"
     }
   ],
   "headers": [
@@ -37,6 +31,5 @@
         }
       ]
     }
-  ],
-  "outputDirectory": "dist"
+  ]
 }

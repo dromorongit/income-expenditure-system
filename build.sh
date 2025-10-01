@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Starting production setup for Railway..."
+echo "🚀 Starting production build for Railway..."
 
 # Install dependencies
 echo "📦 Installing dependencies..."
@@ -10,10 +10,17 @@ npm ci --only=production
 echo "🔨 Building web application..."
 npx expo export --platform web
 
-# Ensure dist directory exists
+# Ensure dist directory exists and has content
 echo "📁 Ensuring build directory..."
 mkdir -p dist
 
-echo "✅ Setup completed successfully!"
+# Verify build output exists
+if [ ! -d "dist" ]; then
+  echo "❌ Build failed - dist directory not created"
+  exit 1
+fi
+
+echo "✅ Build completed successfully!"
 echo "🌐 Your app is ready to serve static files"
-echo "📄 Serving index.html as main page"
+echo "📄 Files in dist directory:"
+ls -la dist/

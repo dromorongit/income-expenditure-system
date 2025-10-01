@@ -1,5 +1,5 @@
 {
-  "name": "income-expenditure-system",
+  "name": "income-expenditure-system-frontend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "echo 'Build completed - ready for Railway'",
-    "build:production": "echo 'Production build ready'",
+    "build": "echo 'Frontend ready for deployment'",
+    "build:production": "echo 'Production frontend ready'",
     "export": "echo 'Export completed'",
     "serve": "npx serve@latest dist",
     "deploy": "npm run serve",
-    "build:railway": "echo 'Railway build ready'",
+    "build:railway": "echo 'Railway frontend deployment ready'",
     "start:production": "node server-production.js"
   },
   "dependencies": {

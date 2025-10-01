@@ -15,7 +15,7 @@ export const ENVIRONMENTS = {
     retryAttempts: 2,
   },
   production: {
-    apiUrl: 'https://income-expenditure-system-production.up.railway.app/api/v1',
+    apiUrl: 'https://income-expenditure-system-production.up.railway.app/api',
     enableLogging: false,
     enableErrorReporting: true,
     timeout: 10000,

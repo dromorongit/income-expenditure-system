@@ -14,9 +14,8 @@
     "export": "npx expo export --platform web",
     "serve": "npx serve@latest dist",
     "deploy": "npm run build && npm run serve",
-    "build:vercel": "npx expo export:web",
-    "build:netlify": "npx expo export:web",
-    "build:firebase": "npx expo export:web",
+    "build:netlify": "npx expo export --platform web",
+    "build:firebase": "npx expo export --platform web",
     "start:production": "node server-production.js"
   },
   "dependencies": {

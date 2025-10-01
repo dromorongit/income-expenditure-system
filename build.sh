@@ -8,7 +8,7 @@ npm ci --only=production
 
 # Build the web app for production
 echo "🔨 Building web application..."
-npx expo export --platform web --config app.production.json
+npx expo export --platform web
 
 # Ensure dist directory exists
 echo "📁 Ensuring build directory..."

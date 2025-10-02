@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 3000;
 // Enable CORS for all routes
 app.use(cors());
 
-// Serve static files from root directory
-app.use(express.static(path.join(__dirname)));
+// Serve static files from dist directory (React app)
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // API routes
 app.get('/api', (req, res) => {
@@ -21,17 +21,14 @@ app.get('/api', (req, res) => {
   });
 });
 
-// Serve static files
-app.use(express.static(path.join(__dirname)));
-
-// Default route - serve index.html
+// Default route - serve React app index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-// Simple 404 handler
+// Simple 404 handler - serve React app for SPA routing
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'index.html'));
+  res.status(404).sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Start server

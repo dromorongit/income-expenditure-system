@@ -5,9 +5,18 @@ node_modules/
 
 # Expo
 .expo/
-dist/
 web-build/
 expo-env.d.ts
+
+# Build outputs
+dist/
+public/_redirects
+
+# Static files (not needed for production)
+index-static.html
+
+# Production build
+.vercel/
 
 # Native
 .kotlin/

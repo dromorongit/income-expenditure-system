@@ -12,15 +12,18 @@ npx expo export --platform web
 
 # Ensure dist directory exists and has content
 echo "📁 Ensuring build directory..."
-mkdir -p dist
-
-# Verify build output exists
 if [ ! -d "dist" ]; then
   echo "❌ Build failed - dist directory not created"
   exit 1
 fi
 
+# Verify the React app was built (check for index.html in dist)
+if [ ! -f "dist/index.html" ]; then
+  echo "❌ Build failed - React app not found in dist/index.html"
+  exit 1
+fi
+
 echo "✅ Build completed successfully!"
-echo "🌐 Your app is ready to serve static files"
-echo "📄 Files in dist directory:"
+echo "🌐 React app built and ready to serve"
+echo "📄 Built files:"
 ls -la dist/
